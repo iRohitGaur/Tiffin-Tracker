@@ -1,0 +1,533 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D146554A2051410E00430D8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14655492051410E00430D8A /* AppDelegate.swift */; };
+		D146554C2051410E00430D8A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D146554B2051410E00430D8A /* ViewController.swift */; };
+		D146554F2051410E00430D8A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D146554D2051410E00430D8A /* Main.storyboard */; };
+		D14655522051410E00430D8A /* Tiffin_Tracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D14655502051410E00430D8A /* Tiffin_Tracker.xcdatamodeld */; };
+		D14655542051410E00430D8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D14655532051410E00430D8A /* Assets.xcassets */; };
+		D14655572051410E00430D8A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D14655552051410E00430D8A /* LaunchScreen.storyboard */; };
+		D146555F2051416A00430D8A /* TiffinTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D146555E2051416A00430D8A /* TiffinTableViewCell.swift */; };
+		D1465561205157A700430D8A /* AddTiffin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1465560205157A700430D8A /* AddTiffin.swift */; };
+		D146556C2059223100430D8A /* CalenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D146556A2059223000430D8A /* CalenderViewController.swift */; };
+		D146556D2059223100430D8A /* CalenderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D146556B2059223100430D8A /* CalenderCell.swift */; };
+		D146557520597A0C00430D8A /* dataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D146557420597A0C00430D8A /* dataHandler.swift */; };
+		D17F8675207E246B007B6865 /* addBalance@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D17F8671207E246B007B6865 /* addBalance@2x.png */; };
+		D17F8676207E246B007B6865 /* addBalance@4x.png in Resources */ = {isa = PBXBuildFile; fileRef = D17F8672207E246B007B6865 /* addBalance@4x.png */; };
+		D17F8677207E246B007B6865 /* addBalance.png in Resources */ = {isa = PBXBuildFile; fileRef = D17F8673207E246B007B6865 /* addBalance.png */; };
+		D17F8678207E246B007B6865 /* addBalance@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D17F8674207E246B007B6865 /* addBalance@3x.png */; };
+		D1FD7FA0205B6F8900C732EC /* SelectedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FD7F9F205B6F8900C732EC /* SelectedCell.swift */; };
+		D1FD807D205F8C7E00C732EC /* Tiffin+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FD807B205F8C7E00C732EC /* Tiffin+CoreDataClass.swift */; };
+		D1FD807E205F8C7E00C732EC /* Tiffin+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FD807C205F8C7E00C732EC /* Tiffin+CoreDataProperties.swift */; };
+		D1FF6CE82080809B00719236 /* arrow-up-right.png in Resources */ = {isa = PBXBuildFile; fileRef = D1FF6CE72080809B00719236 /* arrow-up-right.png */; };
+		D1FF6CEA2080880E00719236 /* AddTiffinShade.png in Resources */ = {isa = PBXBuildFile; fileRef = D1FF6CE92080880E00719236 /* AddTiffinShade.png */; };
+		D1FF6CEC20819F8400719236 /* PlainShade.png in Resources */ = {isa = PBXBuildFile; fileRef = D1FF6CEB20819F8400719236 /* PlainShade.png */; };
+		D1FF6CEE2082621000719236 /* arrow-up.png in Resources */ = {isa = PBXBuildFile; fileRef = D1FF6CED2082621000719236 /* arrow-up.png */; };
+		D1FF6CF020827A2000719236 /* shade.png in Resources */ = {isa = PBXBuildFile; fileRef = D1FF6CEF20827A2000719236 /* shade.png */; };
+		E6504C377DB7A5360AB23AD8 /* Pods_Tiffin_Tracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA8C4838D23344644596357B /* Pods_Tiffin_Tracker.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		073EEF611AAA5CC5A88B53D5 /* Pods-Tiffin Tracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tiffin Tracker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tiffin Tracker/Pods-Tiffin Tracker.debug.xcconfig"; sourceTree = "<group>"; };
+		80B993918AFE5C00A90599AE /* Pods-Tiffin Tracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tiffin Tracker.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tiffin Tracker/Pods-Tiffin Tracker.release.xcconfig"; sourceTree = "<group>"; };
+		D14655462051410E00430D8A /* Tiffin Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tiffin Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D14655492051410E00430D8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D146554B2051410E00430D8A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D146554E2051410E00430D8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D14655512051410E00430D8A /* Tiffin_Tracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Tiffin_Tracker.xcdatamodel; sourceTree = "<group>"; };
+		D14655532051410E00430D8A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D14655562051410E00430D8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D14655582051410E00430D8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D146555E2051416A00430D8A /* TiffinTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TiffinTableViewCell.swift; sourceTree = "<group>"; };
+		D1465560205157A700430D8A /* AddTiffin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTiffin.swift; sourceTree = "<group>"; };
+		D146556A2059223000430D8A /* CalenderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalenderViewController.swift; sourceTree = "<group>"; };
+		D146556B2059223100430D8A /* CalenderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalenderCell.swift; sourceTree = "<group>"; };
+		D146557420597A0C00430D8A /* dataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dataHandler.swift; sourceTree = "<group>"; };
+		D17F8671207E246B007B6865 /* addBalance@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "addBalance@2x.png"; sourceTree = "<group>"; };
+		D17F8672207E246B007B6865 /* addBalance@4x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "addBalance@4x.png"; sourceTree = "<group>"; };
+		D17F8673207E246B007B6865 /* addBalance.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addBalance.png; sourceTree = "<group>"; };
+		D17F8674207E246B007B6865 /* addBalance@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "addBalance@3x.png"; sourceTree = "<group>"; };
+		D1FD7F9F205B6F8900C732EC /* SelectedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedCell.swift; sourceTree = "<group>"; };
+		D1FD807B205F8C7E00C732EC /* Tiffin+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tiffin+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D1FD807C205F8C7E00C732EC /* Tiffin+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tiffin+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D1FF6CE72080809B00719236 /* arrow-up-right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-up-right.png"; sourceTree = "<group>"; };
+		D1FF6CE92080880E00719236 /* AddTiffinShade.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AddTiffinShade.png; sourceTree = "<group>"; };
+		D1FF6CEB20819F8400719236 /* PlainShade.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PlainShade.png; sourceTree = "<group>"; };
+		D1FF6CED2082621000719236 /* arrow-up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-up.png"; sourceTree = "<group>"; };
+		D1FF6CEF20827A2000719236 /* shade.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shade.png; sourceTree = "<group>"; };
+		EA8C4838D23344644596357B /* Pods_Tiffin_Tracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tiffin_Tracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D14655432051410E00430D8A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6504C377DB7A5360AB23AD8 /* Pods_Tiffin_Tracker.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0F55C94D66B18AB9514CBCEC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				073EEF611AAA5CC5A88B53D5 /* Pods-Tiffin Tracker.debug.xcconfig */,
+				80B993918AFE5C00A90599AE /* Pods-Tiffin Tracker.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		17C3E01456B05A9B269BE4E4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EA8C4838D23344644596357B /* Pods_Tiffin_Tracker.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D146553D2051410E00430D8A = {
+			isa = PBXGroup;
+			children = (
+				D14655482051410E00430D8A /* Tiffin Tracker */,
+				D14655472051410E00430D8A /* Products */,
+				0F55C94D66B18AB9514CBCEC /* Pods */,
+				17C3E01456B05A9B269BE4E4 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		D14655472051410E00430D8A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D14655462051410E00430D8A /* Tiffin Tracker.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D14655482051410E00430D8A /* Tiffin Tracker */ = {
+			isa = PBXGroup;
+			children = (
+				D146557620597ECB00430D8A /* Model */,
+				D146557720597F2800430D8A /* Entry Screen */,
+				D146557820597F3E00430D8A /* Calender Screen */,
+				D1465560205157A700430D8A /* AddTiffin.swift */,
+				D146554D2051410E00430D8A /* Main.storyboard */,
+				D14655492051410E00430D8A /* AppDelegate.swift */,
+				D14655532051410E00430D8A /* Assets.xcassets */,
+				D17F8664207DDCE3007B6865 /* Images */,
+				D14655552051410E00430D8A /* LaunchScreen.storyboard */,
+				D14655582051410E00430D8A /* Info.plist */,
+				D14655502051410E00430D8A /* Tiffin_Tracker.xcdatamodeld */,
+			);
+			path = "Tiffin Tracker";
+			sourceTree = "<group>";
+		};
+		D146557620597ECB00430D8A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D1FD807B205F8C7E00C732EC /* Tiffin+CoreDataClass.swift */,
+				D1FD807C205F8C7E00C732EC /* Tiffin+CoreDataProperties.swift */,
+				D146557420597A0C00430D8A /* dataHandler.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D146557720597F2800430D8A /* Entry Screen */ = {
+			isa = PBXGroup;
+			children = (
+				D146554B2051410E00430D8A /* ViewController.swift */,
+				D146555E2051416A00430D8A /* TiffinTableViewCell.swift */,
+			);
+			path = "Entry Screen";
+			sourceTree = "<group>";
+		};
+		D146557820597F3E00430D8A /* Calender Screen */ = {
+			isa = PBXGroup;
+			children = (
+				D146556A2059223000430D8A /* CalenderViewController.swift */,
+				D146556B2059223100430D8A /* CalenderCell.swift */,
+				D1FD7F9F205B6F8900C732EC /* SelectedCell.swift */,
+			);
+			path = "Calender Screen";
+			sourceTree = "<group>";
+		};
+		D17F8664207DDCE3007B6865 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				D1FF6CEF20827A2000719236 /* shade.png */,
+				D1FF6CEB20819F8400719236 /* PlainShade.png */,
+				D1FF6CE92080880E00719236 /* AddTiffinShade.png */,
+				D1FF6CED2082621000719236 /* arrow-up.png */,
+				D1FF6CE72080809B00719236 /* arrow-up-right.png */,
+				D17F8673207E246B007B6865 /* addBalance.png */,
+				D17F8671207E246B007B6865 /* addBalance@2x.png */,
+				D17F8674207E246B007B6865 /* addBalance@3x.png */,
+				D17F8672207E246B007B6865 /* addBalance@4x.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D14655452051410E00430D8A /* Tiffin Tracker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D146555B2051410E00430D8A /* Build configuration list for PBXNativeTarget "Tiffin Tracker" */;
+			buildPhases = (
+				E432A079A81DA97FC4F319D4 /* [CP] Check Pods Manifest.lock */,
+				D14655422051410E00430D8A /* Sources */,
+				D14655432051410E00430D8A /* Frameworks */,
+				D14655442051410E00430D8A /* Resources */,
+				ED817B89DB340AAF1A7069DE /* [CP] Embed Pods Frameworks */,
+				808152D086B0518C4E06FA70 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Tiffin Tracker";
+			productName = "Tiffin Tracker";
+			productReference = D14655462051410E00430D8A /* Tiffin Tracker.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D146553E2051410E00430D8A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = RG;
+				TargetAttributes = {
+					D14655452051410E00430D8A = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = D14655412051410E00430D8A /* Build configuration list for PBXProject "Tiffin Tracker" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D146553D2051410E00430D8A;
+			productRefGroup = D14655472051410E00430D8A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D14655452051410E00430D8A /* Tiffin Tracker */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D14655442051410E00430D8A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D17F8677207E246B007B6865 /* addBalance.png in Resources */,
+				D1FF6CF020827A2000719236 /* shade.png in Resources */,
+				D17F8676207E246B007B6865 /* addBalance@4x.png in Resources */,
+				D17F8678207E246B007B6865 /* addBalance@3x.png in Resources */,
+				D1FF6CEE2082621000719236 /* arrow-up.png in Resources */,
+				D14655572051410E00430D8A /* LaunchScreen.storyboard in Resources */,
+				D17F8675207E246B007B6865 /* addBalance@2x.png in Resources */,
+				D1FF6CE82080809B00719236 /* arrow-up-right.png in Resources */,
+				D14655542051410E00430D8A /* Assets.xcassets in Resources */,
+				D146554F2051410E00430D8A /* Main.storyboard in Resources */,
+				D1FF6CEC20819F8400719236 /* PlainShade.png in Resources */,
+				D1FF6CEA2080880E00719236 /* AddTiffinShade.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		808152D086B0518C4E06FA70 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tiffin Tracker/Pods-Tiffin Tracker-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E432A079A81DA97FC4F319D4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Tiffin Tracker-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ED817B89DB340AAF1A7069DE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Tiffin Tracker/Pods-Tiffin Tracker-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/JTAppleCalendar/JTAppleCalendar.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JTAppleCalendar.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tiffin Tracker/Pods-Tiffin Tracker-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D14655422051410E00430D8A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D1FD7FA0205B6F8900C732EC /* SelectedCell.swift in Sources */,
+				D146557520597A0C00430D8A /* dataHandler.swift in Sources */,
+				D146554C2051410E00430D8A /* ViewController.swift in Sources */,
+				D1FD807D205F8C7E00C732EC /* Tiffin+CoreDataClass.swift in Sources */,
+				D146556D2059223100430D8A /* CalenderCell.swift in Sources */,
+				D14655522051410E00430D8A /* Tiffin_Tracker.xcdatamodeld in Sources */,
+				D1465561205157A700430D8A /* AddTiffin.swift in Sources */,
+				D146556C2059223100430D8A /* CalenderViewController.swift in Sources */,
+				D146554A2051410E00430D8A /* AppDelegate.swift in Sources */,
+				D146555F2051416A00430D8A /* TiffinTableViewCell.swift in Sources */,
+				D1FD807E205F8C7E00C732EC /* Tiffin+CoreDataProperties.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D146554D2051410E00430D8A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D146554E2051410E00430D8A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D14655552051410E00430D8A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D14655562051410E00430D8A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D14655592051410E00430D8A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D146555A2051410E00430D8A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D146555C2051410E00430D8A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 073EEF611AAA5CC5A88B53D5 /* Pods-Tiffin Tracker.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6MY7C6HRGS;
+				INFOPLIST_FILE = "Tiffin Tracker/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "xyz.rohit.Tiffin-Tracker";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		D146555D2051410E00430D8A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 80B993918AFE5C00A90599AE /* Pods-Tiffin Tracker.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6MY7C6HRGS;
+				INFOPLIST_FILE = "Tiffin Tracker/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "xyz.rohit.Tiffin-Tracker";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D14655412051410E00430D8A /* Build configuration list for PBXProject "Tiffin Tracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D14655592051410E00430D8A /* Debug */,
+				D146555A2051410E00430D8A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D146555B2051410E00430D8A /* Build configuration list for PBXNativeTarget "Tiffin Tracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D146555C2051410E00430D8A /* Debug */,
+				D146555D2051410E00430D8A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D14655502051410E00430D8A /* Tiffin_Tracker.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D14655512051410E00430D8A /* Tiffin_Tracker.xcdatamodel */,
+			);
+			currentVersion = D14655512051410E00430D8A /* Tiffin_Tracker.xcdatamodel */;
+			path = Tiffin_Tracker.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = D146553E2051410E00430D8A /* Project object */;
+}

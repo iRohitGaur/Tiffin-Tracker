@@ -1,0 +1,6 @@
+framework module Pods_Tiffin_Tracker {
+  umbrella header "Pods-Tiffin Tracker-umbrella.h"
+
+  export *
+  module * { export * }
+}

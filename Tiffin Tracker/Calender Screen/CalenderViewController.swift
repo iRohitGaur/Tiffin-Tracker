@@ -85,12 +85,12 @@ class CalenderViewController: UIViewController {
     func setupDates() {
         let tiffinDays = tiffinObject!.weekdays as! Set<String>
         var date = tiffinObject!.startingDate! as Date
-        let endDate = Date().toLocalTime() // last date
+        let endDate = Date().toLocalStart() // last date
         if tiffinObject!.deliveredDates != nil {
             deliveredDatesArray = tiffinObject!.deliveredDates as! [String]
         }
         while date <= endDate {
-            let day = Date().toLocalTime().dayOfTheWeek(date: date)
+            let day = Date().toLocalStart().dayOfTheWeek(date: date)
             if tiffinDays.contains(day!) {
                 let dateStr = date.dayMonthYear(date: date)
                 if !deliveredDatesArray.contains(dateStr) {
@@ -113,8 +113,8 @@ class CalenderViewController: UIViewController {
     
     func setupCalenderView() {
         //Start calender with current date
-        calenderView.scrollToDate( Date().toLocalTime(), animateScroll: false )
-        calenderView.selectDates( [Date().toLocalTime()] )
+        calenderView.scrollToDate( Date().toLocalStart(), animateScroll: false )
+        calenderView.selectDates( [Date().toLocalStart()] )
         
         //Setup calender spacing
         calenderView.minimumLineSpacing = 0
@@ -171,8 +171,8 @@ extension CalenderViewController: JTAppleCalendarViewDataSource {
         let currentYearString: String! = String(currentYear) + " 12 31"
         let previousYearString: String! = String(previousYear) + " 01 01"
         
-        let startDate = formatter.date(from:previousYearString)?.toLocalTime()
-        let endDate = formatter.date(from:currentYearString)?.toLocalTime()
+        let startDate = formatter.date(from:previousYearString)?.toLocalStart()
+        let endDate = formatter.date(from:currentYearString)?.toLocalStart()
         
         let parameters = ConfigurationParameters(startDate: startDate!, endDate: endDate!)
         return parameters
@@ -202,7 +202,7 @@ extension CalenderViewController: JTAppleCalendarViewDelegate {
     
     func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
         let strDate = cellState.date.dayMonthYear(date: cellState.date)
-        let todaysDate = Date().dayMonthYear(date: Date().toLocalTime())
+        let todaysDate = Date().dayMonthYear(date: Date().toLocalStart())
         if strDate>todaysDate {
             let alert = UIAlertController(title: "How futuristic of you!", message: "As much as we love time travel, we wont be to able to select a future date as a delivered date of your Tiffin, for now.", preferredStyle: .alert)
             alert.view.backgroundColor = getRandomColor()
@@ -227,7 +227,7 @@ extension CalenderViewController: JTAppleCalendarViewDelegate {
                     print("Delivered dates are: \(deliveredDatesArray)")
                     /*
                      //Removed this functionality to give user flexibility of choosing days that are not in the tiffin delivery days
-                     let day = cellState.date.toLocalTime().dayOfTheWeek(date: cellState.date)
+                     let day = cellState.date.toLocalStart().dayOfTheWeek(date: cellState.date)
                      if tiffinDaysArray.contains(day!) {
                      deliveredDatesArray.append(strDate)
                      } else {
@@ -249,12 +249,12 @@ extension CalenderViewController: JTAppleCalendarViewDelegate {
     }
     
     func calendar(_ calendar: JTAppleCalendarView, didScrollToDateSegmentWith visibleDates: DateSegmentInfo) {
-        let date = visibleDates.monthDates.last!.date.toLocalTime()
+        let date = visibleDates.monthDates.last!.date.toLocalStart()
         
         yearLabel.text = UTCToLocal(date: date, format: "yyyy")
         monthLabel.text = UTCToLocal(date: date, format: "MMM")
         
-        if date.monthYear(date: date) == date.monthYear(date: Date().toLocalTime()) {
+        if date.monthYear(date: date) == date.monthYear(date: Date().toLocalStart()) {
             UIView.transition(with: dayLabel, duration: 0.5, options: .transitionFlipFromLeft, animations: { self.dayLabel.isHidden = false })
         } else {
             UIView.transition(with: dayLabel, duration: 0.5, options: .transitionFlipFromLeft, animations: { self.dayLabel.isHidden = true })
@@ -296,6 +296,20 @@ extension Date {
         return dateFormatter.string(from:date)
     }
     
+    // Convert UTC (or GMT) to local time with 00:00:00
+    func toLocalStart() -> Date {
+        let formatter = DateFormatter()
+        formatter.timeZone = TimeZone(secondsFromGMT: 0)
+        formatter.dateFormat="yyyy-MM-dd 00:00:00 Z"
+        return formatter.date(from: formatter.string(from: Date().toLocalTime()))!
+    }
+    
+    func dateFromDayBeginning(date: Date) -> Date {
+        let formatter = DateFormatter()
+        formatter.timeZone = TimeZone(secondsFromGMT: 0)
+        formatter.dateFormat="yyyy-MM-dd 00:00:00 Z"
+        return formatter.date(from: formatter.string(from: date))!
+    }
 }
 
 extension CalenderViewController {

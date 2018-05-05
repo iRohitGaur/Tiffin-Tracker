@@ -17,6 +17,8 @@ class ViewController: UIViewController {
     var tiffinDaysArray = Array<String>()
     var count = 0
     var selectedIndex: Int = 0
+    
+    // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         getDataToUpdateTable()
@@ -26,6 +28,9 @@ class ViewController: UIViewController {
         tapGesture.cancelsTouchesInView = false
         self.view.addGestureRecognizer(tapGesture)
         
+        //TEST
+        print("Date Start: \(Date().toLocalStart())")
+        /*
         //ADMOB
         var bannerView: GADBannerView!
         // In this case, we instantiate the banner with desired ad size.
@@ -36,11 +41,13 @@ class ViewController: UIViewController {
         bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
         bannerView.rootViewController = self
         bannerView.load(GADRequest())
+ */
     }
     override func viewWillAppear(_ animated: Bool) {
         getDataToUpdateTable()
     }
     
+    // MARK: - Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ADD" {
             let tiffin = segue.destination as! AddTiffin
@@ -96,13 +103,22 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let action = UIContextualAction(style: .normal, title: nil) { (contextAction, sourceView, completionHandler) in
+        let action1 = UIContextualAction(style: .normal, title: nil) { (contextAction, sourceView, completionHandler) in
             self.alertToAddBalance(index: indexPath.row)
             completionHandler(true)
         }
-        action.image = UIImage(named: "addBalance")
-        action.backgroundColor =  dataHandler.sharedInstance.setColor(r: 122, g: 129, b: 255)
-        let swipeConfig = UISwipeActionsConfiguration(actions: [action])
+        action1.image = UIImage(named: "addBalance")
+        action1.backgroundColor =  dataHandler.sharedInstance.setColor(r: 122, g: 129, b: 255)
+        
+        let action2 = UIContextualAction(style: .normal, title: nil) { (contextAction, sourceView, completionHandler) in
+            // CALL the number here
+            self.tiffinArray[indexPath.row].phone?.makeACall()
+            completionHandler(true)
+        }
+        action2.image = UIImage(named: "call")
+        action2.backgroundColor =  dataHandler.sharedInstance.setColor(r: 50, g: 200, b: 50)
+        
+        let swipeConfig = UISwipeActionsConfiguration(actions: [action2, action1])
         return swipeConfig
     }
 }
@@ -135,13 +151,14 @@ extension ViewController {
             let tiffinDays = tiffins.weekdays as! Set<String>
             print(tiffinDays)
             var date = tiffins.startingDate! as Date
-            let endDate = Date().toLocalTime() // last date
+            print("Starting Date: \(date)")
+            let endDate = Date().toLocalStart() // last date
             var deliveredDatesArray = Array<String>()
             if tiffins.deliveredDates != nil {
                 deliveredDatesArray = tiffins.deliveredDates as! [String]
             }
             while date <= endDate {
-                let day = Date().toLocalTime().dayOfTheWeek(date: date)
+                let day = Date().toLocalStart().dayOfTheWeek(date: date)
                 if tiffinDays.contains(day!) {
                     let dateStr = date.dayMonthYear(date: date)
                     if !deliveredDatesArray.contains(dateStr) {
@@ -244,6 +261,39 @@ extension ViewController {
                                               attribute: .bottom,
                                               multiplier: 1,
                                               constant: 0))
+    }
+}
+
+extension String {
+    
+    enum RegularExpressions: String {
+        case phone = "^\\s*(?:\\+?(\\d{1,3}))?([-. (]*(\\d{3})[-. )]*)?((\\d{3})[-. ]*(\\d{2,4})(?:[-.x ]*(\\d+))?)\\s*$"
+    }
+    
+    func isValid(regex: RegularExpressions) -> Bool {
+        return isValid(regex: regex.rawValue)
+    }
+    
+    func isValid(regex: String) -> Bool {
+        let matches = range(of: regex, options: .regularExpression)
+        return matches != nil
+    }
+    
+    func onlyDigits() -> String {
+        let filtredUnicodeScalars = unicodeScalars.filter{CharacterSet.decimalDigits.contains($0)}
+        return String(String.UnicodeScalarView(filtredUnicodeScalars))
+    }
+    
+    func makeACall() {
+        if isValid(regex: .phone) {
+            if let url = URL(string: "tel://\(self.onlyDigits())"), UIApplication.shared.canOpenURL(url) {
+                if #available(iOS 11, *) {
+                    UIApplication.shared.open(url)
+                } else {
+                    UIApplication.shared.openURL(url)
+                }
+            }
+        }
     }
 }
 

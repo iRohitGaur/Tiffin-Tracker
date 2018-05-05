@@ -20,9 +20,10 @@ struct dataHandler {
         managedObjectContext = appDelegate.persistentContainer.viewContext
     }
     
-    func saveTiffinData(name: String, weekdays: Set<String>, cost: Int, balance: Int, totalDays: Int, startingDate: Date) {
+    func saveTiffinData(name: String, phone: String, weekdays: Set<String>, cost: Int, balance: Int, totalDays: Int, startingDate: Date) {
         let tiffin = Tiffin(context: managedObjectContext!)
         tiffin.name = name
+        tiffin.phone = phone
         tiffin.weekdays = weekdays as NSObject
         tiffin.cost = Int64(cost)
         tiffin.balance = Int64(balance)

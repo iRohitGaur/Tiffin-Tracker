@@ -18,13 +18,18 @@
 		D146556C2059223100430D8A /* CalenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D146556A2059223000430D8A /* CalenderViewController.swift */; };
 		D146556D2059223100430D8A /* CalenderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D146556B2059223100430D8A /* CalenderCell.swift */; };
 		D146557520597A0C00430D8A /* dataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D146557420597A0C00430D8A /* dataHandler.swift */; };
+		D157A930209CB7F20034C281 /* contactBook@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D157A92E209CB7F20034C281 /* contactBook@2x.png */; };
+		D157A931209CB7F20034C281 /* contactBook@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D157A92F209CB7F20034C281 /* contactBook@3x.png */; };
+		D157A93B209CBAFE0034C281 /* call@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D157A938209CBAFE0034C281 /* call@2x.png */; };
+		D157A93C209CBAFE0034C281 /* call@4x.png in Resources */ = {isa = PBXBuildFile; fileRef = D157A939209CBAFE0034C281 /* call@4x.png */; };
+		D157A93D209CBAFE0034C281 /* call@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D157A93A209CBAFE0034C281 /* call@3x.png */; };
+		D157A94C209DDA5C0034C281 /* Tiffin+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D157A94A209DDA5C0034C281 /* Tiffin+CoreDataProperties.swift */; };
+		D157A94D209DDA5C0034C281 /* Tiffin+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D157A94B209DDA5C0034C281 /* Tiffin+CoreDataClass.swift */; };
 		D17F8675207E246B007B6865 /* addBalance@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D17F8671207E246B007B6865 /* addBalance@2x.png */; };
 		D17F8676207E246B007B6865 /* addBalance@4x.png in Resources */ = {isa = PBXBuildFile; fileRef = D17F8672207E246B007B6865 /* addBalance@4x.png */; };
 		D17F8677207E246B007B6865 /* addBalance.png in Resources */ = {isa = PBXBuildFile; fileRef = D17F8673207E246B007B6865 /* addBalance.png */; };
 		D17F8678207E246B007B6865 /* addBalance@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D17F8674207E246B007B6865 /* addBalance@3x.png */; };
 		D1FD7FA0205B6F8900C732EC /* SelectedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FD7F9F205B6F8900C732EC /* SelectedCell.swift */; };
-		D1FD807D205F8C7E00C732EC /* Tiffin+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FD807B205F8C7E00C732EC /* Tiffin+CoreDataClass.swift */; };
-		D1FD807E205F8C7E00C732EC /* Tiffin+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FD807C205F8C7E00C732EC /* Tiffin+CoreDataProperties.swift */; };
 		D1FF6CE82080809B00719236 /* arrow-up-right.png in Resources */ = {isa = PBXBuildFile; fileRef = D1FF6CE72080809B00719236 /* arrow-up-right.png */; };
 		D1FF6CEA2080880E00719236 /* AddTiffinShade.png in Resources */ = {isa = PBXBuildFile; fileRef = D1FF6CE92080880E00719236 /* AddTiffinShade.png */; };
 		D1FF6CEC20819F8400719236 /* PlainShade.png in Resources */ = {isa = PBXBuildFile; fileRef = D1FF6CEB20819F8400719236 /* PlainShade.png */; };
@@ -49,13 +54,18 @@
 		D146556A2059223000430D8A /* CalenderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalenderViewController.swift; sourceTree = "<group>"; };
 		D146556B2059223100430D8A /* CalenderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalenderCell.swift; sourceTree = "<group>"; };
 		D146557420597A0C00430D8A /* dataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dataHandler.swift; sourceTree = "<group>"; };
+		D157A92E209CB7F20034C281 /* contactBook@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "contactBook@2x.png"; sourceTree = "<group>"; };
+		D157A92F209CB7F20034C281 /* contactBook@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "contactBook@3x.png"; sourceTree = "<group>"; };
+		D157A938209CBAFE0034C281 /* call@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "call@2x.png"; sourceTree = "<group>"; };
+		D157A939209CBAFE0034C281 /* call@4x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "call@4x.png"; sourceTree = "<group>"; };
+		D157A93A209CBAFE0034C281 /* call@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "call@3x.png"; sourceTree = "<group>"; };
+		D157A94A209DDA5C0034C281 /* Tiffin+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Tiffin+CoreDataProperties.swift"; path = "/Users/rg/Data/GIT/Tiffin Tracker/Tiffin Tracker/Model/Tiffin+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
+		D157A94B209DDA5C0034C281 /* Tiffin+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Tiffin+CoreDataClass.swift"; path = "/Users/rg/Data/GIT/Tiffin Tracker/Tiffin Tracker/Model/Tiffin+CoreDataClass.swift"; sourceTree = "<absolute>"; };
 		D17F8671207E246B007B6865 /* addBalance@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "addBalance@2x.png"; sourceTree = "<group>"; };
 		D17F8672207E246B007B6865 /* addBalance@4x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "addBalance@4x.png"; sourceTree = "<group>"; };
 		D17F8673207E246B007B6865 /* addBalance.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addBalance.png; sourceTree = "<group>"; };
 		D17F8674207E246B007B6865 /* addBalance@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "addBalance@3x.png"; sourceTree = "<group>"; };
 		D1FD7F9F205B6F8900C732EC /* SelectedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedCell.swift; sourceTree = "<group>"; };
-		D1FD807B205F8C7E00C732EC /* Tiffin+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tiffin+CoreDataClass.swift"; sourceTree = "<group>"; };
-		D1FD807C205F8C7E00C732EC /* Tiffin+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tiffin+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D1FF6CE72080809B00719236 /* arrow-up-right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-up-right.png"; sourceTree = "<group>"; };
 		D1FF6CE92080880E00719236 /* AddTiffinShade.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AddTiffinShade.png; sourceTree = "<group>"; };
 		D1FF6CEB20819F8400719236 /* PlainShade.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PlainShade.png; sourceTree = "<group>"; };
@@ -132,8 +142,8 @@
 		D146557620597ECB00430D8A /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				D1FD807B205F8C7E00C732EC /* Tiffin+CoreDataClass.swift */,
-				D1FD807C205F8C7E00C732EC /* Tiffin+CoreDataProperties.swift */,
+				D157A94B209DDA5C0034C281 /* Tiffin+CoreDataClass.swift */,
+				D157A94A209DDA5C0034C281 /* Tiffin+CoreDataProperties.swift */,
 				D146557420597A0C00430D8A /* dataHandler.swift */,
 			);
 			path = Model;
@@ -161,6 +171,11 @@
 		D17F8664207DDCE3007B6865 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				D157A938209CBAFE0034C281 /* call@2x.png */,
+				D157A93A209CBAFE0034C281 /* call@3x.png */,
+				D157A939209CBAFE0034C281 /* call@4x.png */,
+				D157A92E209CB7F20034C281 /* contactBook@2x.png */,
+				D157A92F209CB7F20034C281 /* contactBook@3x.png */,
 				D1FF6CEF20827A2000719236 /* shade.png */,
 				D1FF6CEB20819F8400719236 /* PlainShade.png */,
 				D1FF6CE92080880E00719236 /* AddTiffinShade.png */,
@@ -240,9 +255,14 @@
 				D1FF6CF020827A2000719236 /* shade.png in Resources */,
 				D17F8676207E246B007B6865 /* addBalance@4x.png in Resources */,
 				D17F8678207E246B007B6865 /* addBalance@3x.png in Resources */,
+				D157A930209CB7F20034C281 /* contactBook@2x.png in Resources */,
+				D157A93B209CBAFE0034C281 /* call@2x.png in Resources */,
+				D157A93C209CBAFE0034C281 /* call@4x.png in Resources */,
+				D157A931209CB7F20034C281 /* contactBook@3x.png in Resources */,
 				D1FF6CEE2082621000719236 /* arrow-up.png in Resources */,
 				D14655572051410E00430D8A /* LaunchScreen.storyboard in Resources */,
 				D17F8675207E246B007B6865 /* addBalance@2x.png in Resources */,
+				D157A93D209CBAFE0034C281 /* call@3x.png in Resources */,
 				D1FF6CE82080809B00719236 /* arrow-up-right.png in Resources */,
 				D14655542051410E00430D8A /* Assets.xcassets in Resources */,
 				D146554F2051410E00430D8A /* Main.storyboard in Resources */,
@@ -315,14 +335,14 @@
 				D1FD7FA0205B6F8900C732EC /* SelectedCell.swift in Sources */,
 				D146557520597A0C00430D8A /* dataHandler.swift in Sources */,
 				D146554C2051410E00430D8A /* ViewController.swift in Sources */,
-				D1FD807D205F8C7E00C732EC /* Tiffin+CoreDataClass.swift in Sources */,
 				D146556D2059223100430D8A /* CalenderCell.swift in Sources */,
 				D14655522051410E00430D8A /* Tiffin_Tracker.xcdatamodeld in Sources */,
 				D1465561205157A700430D8A /* AddTiffin.swift in Sources */,
 				D146556C2059223100430D8A /* CalenderViewController.swift in Sources */,
 				D146554A2051410E00430D8A /* AppDelegate.swift in Sources */,
 				D146555F2051416A00430D8A /* TiffinTableViewCell.swift in Sources */,
-				D1FD807E205F8C7E00C732EC /* Tiffin+CoreDataProperties.swift in Sources */,
+				D157A94D209DDA5C0034C281 /* Tiffin+CoreDataClass.swift in Sources */,
+				D157A94C209DDA5C0034C281 /* Tiffin+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,7 +418,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -451,7 +471,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";

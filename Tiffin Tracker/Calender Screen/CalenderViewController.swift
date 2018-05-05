@@ -262,56 +262,6 @@ extension CalenderViewController: JTAppleCalendarViewDelegate {
     }
 }
 
-extension Date {
-    
-    // Convert local time to UTC (or GMT)
-    func toGlobalTime() -> Date {
-        let timezone = TimeZone.current
-        let seconds = -TimeInterval(timezone.secondsFromGMT(for: self))
-        return Date(timeInterval: seconds, since: self)
-    }
-    
-    // Convert UTC (or GMT) to local time
-    func toLocalTime() -> Date {
-        let timezone = TimeZone.current
-        let seconds = TimeInterval(timezone.secondsFromGMT(for: self))
-        return Date(timeInterval: seconds, since: self)
-    }
-    //Returns Weekday on a particular Date
-    func dayOfTheWeek(date: Date) -> String? {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "EEE"
-        return dateFormatter.string(from: date)
-    }
-    //Returns Date in dd-MM-yyyy format
-    func dayMonthYear(date: Date) -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd-MM-yyyy"
-        return dateFormatter.string(from:date)
-    }
-    
-    func monthYear(date: Date) -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MM-yyyy"
-        return dateFormatter.string(from:date)
-    }
-    
-    // Convert UTC (or GMT) to local time with 00:00:00
-    func toLocalStart() -> Date {
-        let formatter = DateFormatter()
-        formatter.timeZone = TimeZone(secondsFromGMT: 0)
-        formatter.dateFormat="yyyy-MM-dd 00:00:00 Z"
-        return formatter.date(from: formatter.string(from: Date().toLocalTime()))!
-    }
-    
-    func dateFromDayBeginning(date: Date) -> Date {
-        let formatter = DateFormatter()
-        formatter.timeZone = TimeZone(secondsFromGMT: 0)
-        formatter.dateFormat="yyyy-MM-dd 00:00:00 Z"
-        return formatter.date(from: formatter.string(from: date))!
-    }
-}
-
 extension CalenderViewController {
     func getRandomColor() -> UIColor{
         //Generate between 0 to 1

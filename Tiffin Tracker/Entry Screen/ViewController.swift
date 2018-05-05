@@ -28,8 +28,6 @@ class ViewController: UIViewController {
         tapGesture.cancelsTouchesInView = false
         self.view.addGestureRecognizer(tapGesture)
         
-        //TEST
-        print("Date Start: \(Date().toLocalStart())")
         /*
         //ADMOB
         var bannerView: GADBannerView!
@@ -112,7 +110,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         
         let action2 = UIContextualAction(style: .normal, title: nil) { (contextAction, sourceView, completionHandler) in
             // CALL the number here
-            self.tiffinArray[indexPath.row].phone?.makeACall()
+            self.tiffinArray[indexPath.row].phone?.call()
             completionHandler(true)
         }
         action2.image = UIImage(named: "call")
@@ -264,36 +262,5 @@ extension ViewController {
     }
 }
 
-extension String {
-    
-    enum RegularExpressions: String {
-        case phone = "^\\s*(?:\\+?(\\d{1,3}))?([-. (]*(\\d{3})[-. )]*)?((\\d{3})[-. ]*(\\d{2,4})(?:[-.x ]*(\\d+))?)\\s*$"
-    }
-    
-    func isValid(regex: RegularExpressions) -> Bool {
-        return isValid(regex: regex.rawValue)
-    }
-    
-    func isValid(regex: String) -> Bool {
-        let matches = range(of: regex, options: .regularExpression)
-        return matches != nil
-    }
-    
-    func onlyDigits() -> String {
-        let filtredUnicodeScalars = unicodeScalars.filter{CharacterSet.decimalDigits.contains($0)}
-        return String(String.UnicodeScalarView(filtredUnicodeScalars))
-    }
-    
-    func makeACall() {
-        if isValid(regex: .phone) {
-            if let url = URL(string: "tel://\(self.onlyDigits())"), UIApplication.shared.canOpenURL(url) {
-                if #available(iOS 11, *) {
-                    UIApplication.shared.open(url)
-                } else {
-                    UIApplication.shared.openURL(url)
-                }
-            }
-        }
-    }
-}
+
 

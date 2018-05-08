@@ -27,8 +27,6 @@ class ViewController: UIViewController {
         tapGesture.delegate = self as? UIGestureRecognizerDelegate
         tapGesture.cancelsTouchesInView = false
         self.view.addGestureRecognizer(tapGesture)
-        
-        /*
         //ADMOB
         var bannerView: GADBannerView!
         // In this case, we instantiate the banner with desired ad size.
@@ -36,10 +34,9 @@ class ViewController: UIViewController {
         addBannerViewToView(bannerView)
         //demo ID: ca-app-pub-3940256099942544/2934735716
         //Actual ID: ca-app-pub-4464278263822865/9612828739
-        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        bannerView.adUnitID = "ca-app-pub-4464278263822865/9612828739"
         bannerView.rootViewController = self
         bannerView.load(GADRequest())
- */
     }
     override func viewWillAppear(_ animated: Bool) {
         getDataToUpdateTable()

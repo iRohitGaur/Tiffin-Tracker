@@ -749,8 +749,8 @@
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
-                                    <outlet property="ibCalendarDataSource" destination="kC9-PZ-agy" id="3Qm-WT-MhK"/>
-                                    <outlet property="ibCalendarDelegate" destination="kC9-PZ-agy" id="7yA-Cd-Pae"/>
+                                    <outlet property="ibCalendarDataSource" destination="kC9-PZ-agy" id="wul-MO-Bc0"/>
+                                    <outlet property="ibCalendarDelegate" destination="kC9-PZ-agy" id="WQw-tj-Uw3"/>
                                 </connections>
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PC5-Gw-hlN">
@@ -927,6 +927,6 @@ You can Select / Deselect the days according to the real delivery status.</strin
         <image name="shade.png" width="750" height="750"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="QYO-cW-FPo"/>
+        <segue reference="enX-Vg-Ggp"/>
     </inferredMetricsTieBreakers>
 </document>

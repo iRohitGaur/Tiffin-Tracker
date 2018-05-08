@@ -29,7 +29,6 @@ class CalenderViewController: UIViewController {
         if preferences.object(forKey: "instructionsViewHiddenInCalendar") != nil {
             instructionsView.isHidden = true
         }
-        
         //Flag is used to ignore the first didSelect call
         flag = false
         
@@ -38,8 +37,6 @@ class CalenderViewController: UIViewController {
             deliveredDatesArray = tiffinObject!.deliveredDates as! Array<String>
             print(tiffinObject!.deliveredDates as! Array<String>)
         }
-        
-        
         //Set Tiffin Name on Navigation Title
         navigationItem.title = tiffinObject!.name
         
@@ -48,7 +45,7 @@ class CalenderViewController: UIViewController {
         
         //Setup Calender
         setupCalenderView()
-        
+        /*
         //ADMOB
         var bannerView: GADBannerView!
         // In this case, we instantiate the banner with desired ad size.
@@ -56,9 +53,10 @@ class CalenderViewController: UIViewController {
         addBannerViewToView(bannerView)
         //demo ID: ca-app-pub-3940256099942544/2934735716
         //Actual ID: ca-app-pub-4464278263822865/2457227594
-        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        bannerView.adUnitID = "ca-app-pub-4464278263822865/2457227594"
         bannerView.rootViewController = self
         bannerView.load(GADRequest())
+ */
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -160,8 +158,7 @@ class CalenderViewController: UIViewController {
     }
 }
 
-extension CalenderViewController: JTAppleCalendarViewDataSource {
-    
+extension CalenderViewController: JTAppleCalendarViewDataSource, JTAppleCalendarViewDelegate {
     func configureCalendar(_ calendar: JTAppleCalendarView) -> ConfigurationParameters {
         formatter.dateFormat = "yyyy-MM-dd"
         formatter.timeZone = TimeZone(abbreviation: "UTC")
@@ -171,15 +168,13 @@ extension CalenderViewController: JTAppleCalendarViewDataSource {
         let currentYearString: String! = String(currentYear) + " 12 31"
         let previousYearString: String! = String(previousYear) + " 01 01"
         
-        let startDate = formatter.date(from:previousYearString)?.toLocalStart()
-        let endDate = formatter.date(from:currentYearString)?.toLocalStart()
+        let startDate = formatter.date(from:previousYearString)?.toLocalTime()
+        let endDate = formatter.date(from:currentYearString)?.toLocalTime()
         
         let parameters = ConfigurationParameters(startDate: startDate!, endDate: endDate!)
         return parameters
     }
-}
-
-extension CalenderViewController: JTAppleCalendarViewDelegate {
+    
     func calendar(_ calendar: JTAppleCalendarView, willDisplay cell: JTAppleCell, forItemAt date: Date, cellState: CellState, indexPath: IndexPath) {
         //
     }
@@ -201,60 +196,63 @@ extension CalenderViewController: JTAppleCalendarViewDelegate {
     }
     
     func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
-        let strDate = cellState.date.dayMonthYear(date: cellState.date)
+        let cellDate = cellState.date.dayMonthYear(date: cellState.date)
         let todaysDate = Date().dayMonthYear(date: Date().toLocalStart())
-        if strDate>todaysDate {
-            let alert = UIAlertController(title: "How futuristic of you!", message: "As much as we love time travel, we wont be to able to select a future date as a delivered date of your Tiffin, for now.", preferredStyle: .alert)
-            alert.view.backgroundColor = getRandomColor()
-            alert.view.layer.cornerRadius = 20.0
-            let dismissAction = UIAlertAction(title: "Okay", style: .default, handler: nil)
-            let future = UIAlertAction(title: "No, I can travel in time", style: .default) { (alertAction) in
-                let jokeAlert = UIAlertController(title: "Kidding, aren't you!", message: "We hope you aren't serious. If you are, do consider sharing your secret with us.", preferredStyle: .alert)
-                jokeAlert.view.backgroundColor = self.getRandomColor()
-                jokeAlert.view.layer.cornerRadius = 20.0
-                let jokeDismiss = UIAlertAction(title: "Okay, this never happened", style: .default, handler: nil)
-                jokeAlert.addAction(jokeDismiss)
-                self.present(jokeAlert, animated: true, completion: nil)
-            }
-            alert.addAction(dismissAction)
-            alert.addAction(future)
-            self.present(alert, animated: true, completion: nil)
-        } else {
-            if flag {
-                if (cell?.isKind(of: CalenderCell.self))! {
-                    //Add the cellstate date to dates entity
-                    deliveredDatesArray.append(strDate)
-                    print("Delivered dates are: \(deliveredDatesArray)")
-                    /*
-                     //Removed this functionality to give user flexibility of choosing days that are not in the tiffin delivery days
-                     let day = cellState.date.toLocalStart().dayOfTheWeek(date: cellState.date)
-                     if tiffinDaysArray.contains(day!) {
-                     deliveredDatesArray.append(strDate)
-                     } else {
-                     //Show Alert that this day is not in the Tiffin Delivery Days
-                     }
-                     */
-                } else {
-                    //Remove the cellstate date from dates entity
-                    deliveredDatesArray.remove(at: deliveredDatesArray.index(of: strDate)!)
+        let order = NSCalendar.current.compare(cellState.date.toLocalTime(), to: Date().toLocalTime(), toGranularity: .day)
+        if cellState.dateBelongsTo == .thisMonth {
+            if order == .orderedDescending {
+                let alert = UIAlertController(title: "How futuristic of you!", message: "As much as we love time travel, we wont be to able to select a future date as a delivered date of your Tiffin, for now.", preferredStyle: .alert)
+                alert.view.backgroundColor = getRandomColor()
+                alert.view.layer.cornerRadius = 20.0
+                let dismissAction = UIAlertAction(title: "Okay", style: .default, handler: nil)
+                let future = UIAlertAction(title: "No, I can travel in time", style: .default) { (alertAction) in
+                    let jokeAlert = UIAlertController(title: "Kidding, aren't you!", message: "We hope you aren't serious. If you are, do consider sharing your secret with us.", preferredStyle: .alert)
+                    jokeAlert.view.backgroundColor = self.getRandomColor()
+                    jokeAlert.view.layer.cornerRadius = 20.0
+                    let jokeDismiss = UIAlertAction(title: "Okay, this never happened", style: .default, handler: nil)
+                    jokeAlert.addAction(jokeDismiss)
+                    self.present(jokeAlert, animated: true, completion: nil)
                 }
-            }
-            
-            calenderView.reloadData()
-            //Setting the flag true now will allow next didSelect calls to select current date as well. This was done as the 3rd party library makes an initial didSelect call on current date and our logic was adding it in Array
-            if strDate == todaysDate {
-                flag = true
+                alert.addAction(dismissAction)
+                alert.addAction(future)
+                self.present(alert, animated: true, completion: nil)
+            } else {
+                if flag {
+                    if (cell?.isKind(of: CalenderCell.self))! {
+                        //Add the cellstate date to dates entity
+                        deliveredDatesArray.append(cellDate)
+                        print("Delivered dates are: \(deliveredDatesArray)")
+                        /*
+                         //Removed this functionality to give user flexibility of choosing days that are not in the tiffin delivery days
+                         let day = cellState.date.toLocalStart().dayOfTheWeek(date: cellState.date)
+                         if tiffinDaysArray.contains(day!) {
+                         deliveredDatesArray.append(strDate)
+                         } else {
+                         //Show Alert that this day is not in the Tiffin Delivery Days
+                         }
+                         */
+                    } else {
+                        //Remove the cellstate date from dates entity
+                        deliveredDatesArray.remove(at: deliveredDatesArray.index(of: cellDate)!)
+                    }
+                }
+                
+                calenderView.reloadData()
+                //Setting the flag true now will allow next didSelect calls to select current date as well. This was done as the 3rd party library makes an initial didSelect call on current date and our logic was adding it in Array
+                if cellDate == todaysDate {
+                    flag = true
+                }
             }
         }
     }
     
     func calendar(_ calendar: JTAppleCalendarView, didScrollToDateSegmentWith visibleDates: DateSegmentInfo) {
-        let date = visibleDates.monthDates.last!.date.toLocalStart()
+        let date = visibleDates.monthDates.last!.date.toLocalTime()
         
         yearLabel.text = UTCToLocal(date: date, format: "yyyy")
         monthLabel.text = UTCToLocal(date: date, format: "MMM")
         
-        if date.monthYear(date: date) == date.monthYear(date: Date().toLocalStart()) {
+        if date.monthYear(date: date) == date.monthYear(date: Date().toLocalTime()) {
             UIView.transition(with: dayLabel, duration: 0.5, options: .transitionFlipFromLeft, animations: { self.dayLabel.isHidden = false })
         } else {
             UIView.transition(with: dayLabel, duration: 0.5, options: .transitionFlipFromLeft, animations: { self.dayLabel.isHidden = true })

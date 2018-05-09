@@ -45,7 +45,6 @@ class CalenderViewController: UIViewController {
         
         //Setup Calender
         setupCalenderView()
-        /*
         //ADMOB
         var bannerView: GADBannerView!
         // In this case, we instantiate the banner with desired ad size.
@@ -56,7 +55,6 @@ class CalenderViewController: UIViewController {
         bannerView.adUnitID = "ca-app-pub-4464278263822865/2457227594"
         bannerView.rootViewController = self
         bannerView.load(GADRequest())
- */
     }
     
     override func viewWillDisappear(_ animated: Bool) {

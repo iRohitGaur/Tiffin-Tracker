@@ -25,6 +25,8 @@
 		D157A93D209CBAFE0034C281 /* call@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D157A93A209CBAFE0034C281 /* call@3x.png */; };
 		D157A94C209DDA5C0034C281 /* Tiffin+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D157A94A209DDA5C0034C281 /* Tiffin+CoreDataProperties.swift */; };
 		D157A94D209DDA5C0034C281 /* Tiffin+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D157A94B209DDA5C0034C281 /* Tiffin+CoreDataClass.swift */; };
+		D157A94F20A362930034C281 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D157A94E20A362930034C281 /* Settings.bundle */; };
+		D157A95320A375F60034C281 /* TTLaunch.png in Resources */ = {isa = PBXBuildFile; fileRef = D157A95220A375F60034C281 /* TTLaunch.png */; };
 		D17F8675207E246B007B6865 /* addBalance@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D17F8671207E246B007B6865 /* addBalance@2x.png */; };
 		D17F8676207E246B007B6865 /* addBalance@4x.png in Resources */ = {isa = PBXBuildFile; fileRef = D17F8672207E246B007B6865 /* addBalance@4x.png */; };
 		D17F8677207E246B007B6865 /* addBalance.png in Resources */ = {isa = PBXBuildFile; fileRef = D17F8673207E246B007B6865 /* addBalance.png */; };
@@ -61,6 +63,8 @@
 		D157A93A209CBAFE0034C281 /* call@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "call@3x.png"; sourceTree = "<group>"; };
 		D157A94A209DDA5C0034C281 /* Tiffin+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Tiffin+CoreDataProperties.swift"; path = "/Users/rg/Data/GIT/Tiffin Tracker/Tiffin Tracker/Model/Tiffin+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
 		D157A94B209DDA5C0034C281 /* Tiffin+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Tiffin+CoreDataClass.swift"; path = "/Users/rg/Data/GIT/Tiffin Tracker/Tiffin Tracker/Model/Tiffin+CoreDataClass.swift"; sourceTree = "<absolute>"; };
+		D157A94E20A362930034C281 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		D157A95220A375F60034C281 /* TTLaunch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TTLaunch.png; sourceTree = "<group>"; };
 		D17F8671207E246B007B6865 /* addBalance@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "addBalance@2x.png"; sourceTree = "<group>"; };
 		D17F8672207E246B007B6865 /* addBalance@4x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "addBalance@4x.png"; sourceTree = "<group>"; };
 		D17F8673207E246B007B6865 /* addBalance.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addBalance.png; sourceTree = "<group>"; };
@@ -135,6 +139,7 @@
 				D14655552051410E00430D8A /* LaunchScreen.storyboard */,
 				D14655582051410E00430D8A /* Info.plist */,
 				D14655502051410E00430D8A /* Tiffin_Tracker.xcdatamodeld */,
+				D157A94E20A362930034C281 /* Settings.bundle */,
 			);
 			path = "Tiffin Tracker";
 			sourceTree = "<group>";
@@ -171,6 +176,7 @@
 		D17F8664207DDCE3007B6865 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				D157A95220A375F60034C281 /* TTLaunch.png */,
 				D157A938209CBAFE0034C281 /* call@2x.png */,
 				D157A93A209CBAFE0034C281 /* call@3x.png */,
 				D157A939209CBAFE0034C281 /* call@4x.png */,
@@ -263,10 +269,12 @@
 				D14655572051410E00430D8A /* LaunchScreen.storyboard in Resources */,
 				D17F8675207E246B007B6865 /* addBalance@2x.png in Resources */,
 				D157A93D209CBAFE0034C281 /* call@3x.png in Resources */,
+				D157A95320A375F60034C281 /* TTLaunch.png in Resources */,
 				D1FF6CE82080809B00719236 /* arrow-up-right.png in Resources */,
 				D14655542051410E00430D8A /* Assets.xcassets in Resources */,
 				D146554F2051410E00430D8A /* Main.storyboard in Resources */,
 				D1FF6CEC20819F8400719236 /* PlainShade.png in Resources */,
+				D157A94F20A362930034C281 /* Settings.bundle in Resources */,
 				D1FF6CEA2080880E00719236 /* AddTiffinShade.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

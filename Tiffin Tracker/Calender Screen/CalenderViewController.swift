@@ -46,6 +46,18 @@ class CalenderViewController: UIViewController {
         //Setup Calender
         setupCalenderView()
         //ADMOB
+        callAdmob()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        //This checks if current VC is being removed from ParentVC
+        //We need to call SaveContext only in this scenario as we save it in segue method while going in forward direction
+        if self.isMovingFromParentViewController {
+            saveToCoreData()
+        }
+    }
+    
+    func callAdmob() {
         var bannerView: GADBannerView!
         // In this case, we instantiate the banner with desired ad size.
         bannerView = GADBannerView(adSize: kGADAdSizeBanner)
@@ -55,14 +67,6 @@ class CalenderViewController: UIViewController {
         bannerView.adUnitID = "ca-app-pub-4464278263822865/2457227594"
         bannerView.rootViewController = self
         bannerView.load(GADRequest())
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        //This checks if current VC is being removed from ParentVC
-        //We need to call SaveContext only in this scenario as we save it in segue method while going in forward direction
-        if self.isMovingFromParentViewController {
-            saveToCoreData()
-        }
     }
     
     @IBAction func dismissInstructionsView(_ sender: Any) {

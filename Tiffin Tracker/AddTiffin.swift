@@ -41,7 +41,9 @@ class AddTiffin: UIViewController, UITableViewDelegate, UITableViewDataSource, U
     override func viewDidLoad() {
         super.viewDidLoad()
         //Hide Contacts View at first
-        showHideContactsView(hidden: true)
+        DispatchQueue.main.async {
+            self.showHideContactsView(hidden: true)
+        }
         
         //Instructions View Logic
         if preferences.object(forKey: "instructionsViewHiddenInAddTiffin") != nil {
@@ -66,6 +68,10 @@ class AddTiffin: UIViewController, UITableViewDelegate, UITableViewDataSource, U
         tapGesture.cancelsTouchesInView = false
         self.view.addGestureRecognizer(tapGesture)
         //ADMOB
+        callAdmob()
+    }
+    
+    func callAdmob() {
         var bannerView: GADBannerView!
         // In this case, we instantiate the banner with desired ad size.
         bannerView = GADBannerView(adSize: kGADAdSizeBanner)
@@ -141,12 +147,14 @@ class AddTiffin: UIViewController, UITableViewDelegate, UITableViewDataSource, U
                     self.loadContacts()
                 }else {
                     // Tell user it is denied
+                    self.sendAlert(title: "Access Denied", message: "The app does not have access to your contacts, please allow access (from Settings > Tiffin Tracker) to use this functionality")
                 }
             })
         case .authorized: self.loadContacts(); break
         case .denied,
              .restricted:
             // Tell user it is denied
+            sendAlert(title: "Access Denied", message: "The app does not have access to your contacts, please allow access (from Settings > Tiffin Tracker) to use this functionality")
             break
         }
     }
@@ -170,8 +178,10 @@ class AddTiffin: UIViewController, UITableViewDelegate, UITableViewDataSource, U
                 self.contacts.append(cmodel)
             }
         }
-        myTableView.reloadData()
-        showHideContactsView(hidden: false)
+        DispatchQueue.main.async {
+            self.myTableView.reloadData()
+            self.showHideContactsView(hidden: false)
+        }
     }
     
     // MARK: - Alert Controller
@@ -248,7 +258,9 @@ extension AddTiffin {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if isSearching { tiffinPhone.text = filteredContacts[indexPath.row].phone }
         else { tiffinPhone.text = contacts[indexPath.row].phone }
-        showHideContactsView(hidden: true)
+        DispatchQueue.main.async {
+            self.showHideContactsView(hidden: true)
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

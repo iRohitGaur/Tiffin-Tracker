@@ -14,6 +14,7 @@ class TiffinTableViewCell: UITableViewCell {
     @IBOutlet weak var tiffinCostLabel: UILabel!
     @IBOutlet weak var tiffinBalanceLabel: UILabel!
     @IBOutlet weak var tiffinDaysLabel: UILabel!
+    @IBOutlet weak var viewBG: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

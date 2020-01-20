@@ -68,7 +68,7 @@ class AddTiffin: UIViewController, UITableViewDelegate, UITableViewDataSource, U
         tapGesture.cancelsTouchesInView = false
         self.view.addGestureRecognizer(tapGesture)
         //ADMOB
-        callAdmob()
+        //callAdmob()
     }
     
     func callAdmob() {
@@ -187,7 +187,6 @@ class AddTiffin: UIViewController, UITableViewDelegate, UITableViewDataSource, U
     // MARK: - Alert Controller
     func sendAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alert.view.backgroundColor = .blue
         alert.view.layer.cornerRadius = 20.0
         let dismiss = UIAlertAction(title: "Okay", style: .default, handler: nil)
         alert.addAction(dismiss)

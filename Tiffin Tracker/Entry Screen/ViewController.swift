@@ -28,7 +28,11 @@ class ViewController: UIViewController {
         tapGesture.cancelsTouchesInView = false
         self.view.addGestureRecognizer(tapGesture)
         //ADMOB
-        callAdmob()
+        //callAdmob()
+        //Configure Notification
+        NotificationHandler.si.configureUserNotificationsCenter()
+        //Request Authorization
+        NotificationHandler.si.requestNotificationAuth()
     }
     override func viewWillAppear(_ animated: Bool) {
         getDataToUpdateTable()
@@ -62,28 +66,31 @@ class ViewController: UIViewController {
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        NotificationHandler.si.removeAllNotifications()
         return tiffinArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "tiffinCell", for: indexPath) as! TiffinTableViewCell
-        /*
-        cell.tiffinNameLabel.text = "Test Name"
-        cell.tiffinCostLabel.text = "65"
-        cell.tiffinBalanceLabel.text = "5000"
-        cell.tiffinDaysLabel.text = "Su  M  T  W  Th  F  S"
-        */
         let arr = dataHandler.sharedInstance.sortWeekdays(weekdays: tiffinArray[indexPath.row].weekdays as! Set<String>)
         //print(arr)
-        cell.tiffinNameLabel.text = tiffinArray[indexPath.row].name
-        cell.tiffinCostLabel.text = String(tiffinArray[indexPath.row].cost)
+        let name = tiffinArray[indexPath.row].name
+        cell.tiffinNameLabel.text = name
         var deliveredDatesArray = Array<String>()
         if tiffinArray[indexPath.row].deliveredDates != nil {
             deliveredDatesArray = tiffinArray[indexPath.row].deliveredDates as! [String]
         }
-        cell.tiffinBalanceLabel.text = String(tiffinArray[indexPath.row].balance - (tiffinArray[indexPath.row].cost * Int64(deliveredDatesArray.count)))
+        let cost = tiffinArray[indexPath.row].cost
+        let balance = tiffinArray[indexPath.row].balance - (cost * Int64(deliveredDatesArray.count))
+        cell.tiffinCostLabel.text = String(cost)
+        cell.tiffinBalanceLabel.text = String(balance)
+        if balance < (2 * cost) {
+            cell.viewBG.backgroundColor = .red
+            NotificationHandler.si.scheduleNotification(title: "\(name!) has low Balance.", seconds: Date().remindTomorrow())
+        } else {
+            cell.viewBG.backgroundColor = .green
+        }
         cell.tiffinDaysLabel.text = arr.joined(separator: " ")
-        //do set to array here
         return cell
     }
     

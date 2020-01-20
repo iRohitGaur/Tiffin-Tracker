@@ -14,7 +14,17 @@
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
+		<key>JTAppleCalendar.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>Pods-Tiffin Tracker.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>Pods-Tiffin Tracker.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>2</integer>

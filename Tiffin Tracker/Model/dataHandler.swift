@@ -128,6 +128,17 @@ extension String {
             }
         }
     }
+    
+    static func random(length: Int = 10) -> String {
+        let base = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+        var randomString: String = ""
+        
+        for _ in 0..<length {
+            let randomValue = arc4random_uniform(UInt32(base.count))
+            randomString += "\(base[base.index(base.startIndex, offsetBy: Int(randomValue))])"
+        }
+        return randomString
+    }
 }
 
 extension Date {
@@ -163,13 +174,29 @@ extension Date {
         dateFormatter.dateFormat = "MM-yyyy"
         return dateFormatter.string(from:date)
     }
-    
-    // Convert UTC (or GMT) to local time with 00:00:00
+    //Convert UTC (or GMT) to local time with 00:00:00
     func toLocalStart() -> Date {
         let formatter = DateFormatter()
         formatter.timeZone = TimeZone(secondsFromGMT: 0)
         formatter.dateFormat="yyyy-MM-dd 00:00:00 Z"
         return formatter.date(from: formatter.string(from: Date().toLocalTime()))!
+    }
+    //Convert UTC (or GMT) to local time with 10:00:00
+    func toLocalTen() -> Date {
+        return Calendar.current.date(byAdding: .hour, value: 10, to: Date().toLocalStart())!
+    }
+    
+    func remindTomorrow() -> Double {
+        var component = Calendar.current.dateComponents([.second], from: Date())
+        var seconds: Double = 0
+        if Date().toLocalTime() > Date().toLocalTen() {
+            component = Calendar.current.dateComponents([.second], from: Date().toLocalTen(), to: Date().toLocalTime())
+            seconds = Double(86400 - component.second!) // 1 day = 86400 seconds
+        } else {
+            component = Calendar.current.dateComponents([.second], from: Date().toLocalTime(), to: Date().toLocalTen())
+            seconds = Double(86400 + component.second!)
+        }
+        return seconds
     }
 }
 

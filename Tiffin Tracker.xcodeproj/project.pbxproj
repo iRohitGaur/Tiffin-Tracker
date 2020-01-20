@@ -31,6 +31,7 @@
 		D17F8676207E246B007B6865 /* addBalance@4x.png in Resources */ = {isa = PBXBuildFile; fileRef = D17F8672207E246B007B6865 /* addBalance@4x.png */; };
 		D17F8677207E246B007B6865 /* addBalance.png in Resources */ = {isa = PBXBuildFile; fileRef = D17F8673207E246B007B6865 /* addBalance.png */; };
 		D17F8678207E246B007B6865 /* addBalance@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D17F8674207E246B007B6865 /* addBalance@3x.png */; };
+		D1D81AD220BBAEB800B10D9E /* NotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D81AD120BBAEB800B10D9E /* NotificationHandler.swift */; };
 		D1FD7FA0205B6F8900C732EC /* SelectedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FD7F9F205B6F8900C732EC /* SelectedCell.swift */; };
 		D1FF6CE82080809B00719236 /* arrow-up-right.png in Resources */ = {isa = PBXBuildFile; fileRef = D1FF6CE72080809B00719236 /* arrow-up-right.png */; };
 		D1FF6CEA2080880E00719236 /* AddTiffinShade.png in Resources */ = {isa = PBXBuildFile; fileRef = D1FF6CE92080880E00719236 /* AddTiffinShade.png */; };
@@ -69,6 +70,7 @@
 		D17F8672207E246B007B6865 /* addBalance@4x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "addBalance@4x.png"; sourceTree = "<group>"; };
 		D17F8673207E246B007B6865 /* addBalance.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addBalance.png; sourceTree = "<group>"; };
 		D17F8674207E246B007B6865 /* addBalance@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "addBalance@3x.png"; sourceTree = "<group>"; };
+		D1D81AD120BBAEB800B10D9E /* NotificationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHandler.swift; sourceTree = "<group>"; };
 		D1FD7F9F205B6F8900C732EC /* SelectedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedCell.swift; sourceTree = "<group>"; };
 		D1FF6CE72080809B00719236 /* arrow-up-right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-up-right.png"; sourceTree = "<group>"; };
 		D1FF6CE92080880E00719236 /* AddTiffinShade.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AddTiffinShade.png; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 				D157A94B209DDA5C0034C281 /* Tiffin+CoreDataClass.swift */,
 				D157A94A209DDA5C0034C281 /* Tiffin+CoreDataProperties.swift */,
 				D146557420597A0C00430D8A /* dataHandler.swift */,
+				D1D81AD120BBAEB800B10D9E /* NotificationHandler.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1FD7FA0205B6F8900C732EC /* SelectedCell.swift in Sources */,
+				D1D81AD220BBAEB800B10D9E /* NotificationHandler.swift in Sources */,
 				D146557520597A0C00430D8A /* dataHandler.swift in Sources */,
 				D146554C2051410E00430D8A /* ViewController.swift in Sources */,
 				D146556D2059223100430D8A /* CalenderCell.swift in Sources */,

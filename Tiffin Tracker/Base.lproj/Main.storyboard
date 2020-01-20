@@ -33,6 +33,10 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C64-qb-WRa">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="85.5"/>
                                                     <subviews>
+                                                        <view alpha="0.10000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X6f-tj-zfD">
+                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="86"/>
+                                                            <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q8G-CI-WIw">
                                                             <rect key="frame" x="16" y="16" width="275" height="30"/>
                                                             <constraints>
@@ -68,18 +72,22 @@
                                                                 <constraint firstAttribute="width" constant="80" id="edk-h8-Wjm"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <color key="textColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstItem="OHU-9o-Znx" firstAttribute="leading" secondItem="C64-qb-WRa" secondAttribute="leading" constant="16" id="0pj-GH-bJB"/>
+                                                        <constraint firstItem="X6f-tj-zfD" firstAttribute="top" secondItem="C64-qb-WRa" secondAttribute="top" id="11S-F3-pzB"/>
+                                                        <constraint firstAttribute="bottom" secondItem="X6f-tj-zfD" secondAttribute="bottom" id="1PF-bX-ryC"/>
                                                         <constraint firstItem="VNm-Cx-kFU" firstAttribute="leading" secondItem="OHU-9o-Znx" secondAttribute="trailing" constant="8" id="FnC-Sx-ES0"/>
                                                         <constraint firstAttribute="bottom" secondItem="OHU-9o-Znx" secondAttribute="bottom" constant="8" id="JTF-Xu-C0x"/>
+                                                        <constraint firstAttribute="trailing" secondItem="X6f-tj-zfD" secondAttribute="trailing" id="Kbl-RZ-GSd"/>
                                                         <constraint firstItem="q8G-CI-WIw" firstAttribute="top" secondItem="C64-qb-WRa" secondAttribute="top" constant="16" id="KhU-ho-Wvd"/>
                                                         <constraint firstAttribute="bottom" secondItem="VNm-Cx-kFU" secondAttribute="bottom" constant="8" id="Ou6-L3-XKp"/>
                                                         <constraint firstAttribute="trailing" secondItem="X45-aC-WhA" secondAttribute="trailing" constant="16" id="QJv-HK-2xr"/>
+                                                        <constraint firstItem="X6f-tj-zfD" firstAttribute="leading" secondItem="C64-qb-WRa" secondAttribute="leading" id="Vic-sB-ArE"/>
                                                         <constraint firstItem="X45-aC-WhA" firstAttribute="top" secondItem="C64-qb-WRa" secondAttribute="top" constant="16" id="a4F-is-xNG"/>
                                                         <constraint firstItem="q8G-CI-WIw" firstAttribute="leading" secondItem="C64-qb-WRa" secondAttribute="leading" constant="16" id="gKa-nR-zOG"/>
                                                         <constraint firstAttribute="trailing" secondItem="VNm-Cx-kFU" secondAttribute="trailing" constant="16" id="rtU-oP-fJn"/>
@@ -100,6 +108,7 @@
                                             <outlet property="tiffinCostLabel" destination="X45-aC-WhA" id="zHW-Xd-CK4"/>
                                             <outlet property="tiffinDaysLabel" destination="OHU-9o-Znx" id="AQe-11-U1U"/>
                                             <outlet property="tiffinNameLabel" destination="q8G-CI-WIw" id="Lyg-Cq-tVd"/>
+                                            <outlet property="viewBG" destination="X6f-tj-zfD" id="eZ9-ph-biW"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -927,6 +936,6 @@ You can Select / Deselect the days according to the real delivery status.</strin
         <image name="shade.png" width="750" height="750"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="enX-Vg-Ggp"/>
+        <segue reference="QYO-cW-FPo"/>
     </inferredMetricsTieBreakers>
 </document>

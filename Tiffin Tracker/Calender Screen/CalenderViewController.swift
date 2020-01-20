@@ -46,7 +46,7 @@ class CalenderViewController: UIViewController {
         //Setup Calender
         setupCalenderView()
         //ADMOB
-        callAdmob()
+        //callAdmob()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
